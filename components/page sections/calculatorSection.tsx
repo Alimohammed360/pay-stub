@@ -157,7 +157,7 @@ export const CalculatorSection = () => {
 
   return (
     <>
-      <div className='font-Calsans text-center my-5 mx-auto w-[410px]'>
+      <div className='font-Calsans text-center my-5 mx-auto w-[430]'>
         <div className="text-3xl font-black">Pay Stub Calculator</div>
         <div className="text-lg font-medium text-gray-500">
           Calculate your salary based on your hourly rate or annual wage
@@ -167,13 +167,13 @@ export const CalculatorSection = () => {
         <div className="w-full sm:w-1/2 h-auto p-5 grid gap-8">
           <div className="flex justify-center gap-2 items-center">
             <button
-              className={`btn btn-wide rounded-full ${anualWage ? 'bg-btn-neutral' : 'btn-outline'}`}
+              className={`btn px-5 sm:btn-wide rounded-full ${anualWage ? 'bg-btn-neutral' : 'btn-outline'}`}
               onClick={() => setanualWage(true)}
             >
               Annual Wage
             </button>
             <button
-              className={`btn btn-wide rounded-full ${!anualWage ? 'bg-btn-neutral' : 'btn-outline'}`}
+              className={`btn px-5 sm:btn-wide rounded-full ${!anualWage ? 'bg-btn-neutral' : 'btn-outline'}`}
               onClick={() => setanualWage(false)}
             >
               Hourly Wage
