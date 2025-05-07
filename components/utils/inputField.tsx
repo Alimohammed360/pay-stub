@@ -6,6 +6,7 @@ import {
   Box,
   TextField,
   Select,
+  NativeSelect,
 } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -18,7 +19,7 @@ interface InputFieldProps {
   label: string;
   className?: string;
   type?: 'text' | 'select' | 'date';
-  optionArr?: { label: string; value: string | number }[];
+  optionArr?: { label: string; value: string | number; keys: number }[];
   value?: string | number | null;
   onChange?: (value: string | number | Dayjs | null) => void;
 }
@@ -28,7 +29,7 @@ export default function InputField({
   label,
   className,
   type = 'text',
-  optionArr, 
+  optionArr,
   value,
   onChange,
 }: InputFieldProps) {
@@ -45,27 +46,36 @@ export default function InputField({
   };
 
   if (type === 'select') {
-    
+
 
     return (
-      <Box sx={{ minWidth: 120 }} className={className}>
-        <FormControl fullWidth>
-          <InputLabel id={`${textId}-label`}>{label}</InputLabel>
-          <Select
-            labelId={`${textId}-label`}
-            id={textId}
-            label={label}
-            value={value ?? ''}
-            onChange={(e) => onChange?.(e.target.value)}
-          >
-            {optionArr?.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </Box>
+      // <Box sx={{ minWidth: 120 }} className={className}>
+      //   <FormControl fullWidth>
+      //     <InputLabel id={`${textId}-label`}>{label}</InputLabel>
+      //     <NativeSelect
+      //       inputProps={{
+      //         name: 'age',
+      //         id: 'uncontrolled-native',
+      //       }}
+      //       value={value ?? ''}
+      //       onChange={(e) => onChange?.(e.target.value)}
+      //     >
+      //       {optionArr?.map((option) => (
+      //         <option key={option.keys} value={option.value}>
+      //           {option.label}
+      //         </option>
+      //       ))}
+      //     </NativeSelect>
+      //   </FormControl>
+      // </Box>
+      <select defaultValue="Large" className="select bg-white border border-black w-full select-lg">
+        <option disabled={false}>{label}</option>
+        {optionArr?.map((option) => (
+          <option key={option.keys} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
     );
   }
 
