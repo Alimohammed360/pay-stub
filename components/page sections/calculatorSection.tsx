@@ -165,7 +165,7 @@ export const CalculatorSection = () => {
       </div>
       <div className="flex flex-wrap  w-full max-h-auto ">
         <div className="w-full sm:w-1/2 h-auto p-5 grid gap-8">
-          <div className="flex justify-center gap-2 items-center">
+          <div className="flex flex-wrap justify-center gap-2 items-center">
             <button
               className={`btn px-5 sm:btn-wide rounded-full ${anualWage ? 'bg-btn-neutral' : 'btn-outline'}`}
               onClick={() => setanualWage(true)}
