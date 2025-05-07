@@ -68,10 +68,10 @@ export default function InputField({
       //     </NativeSelect>
       //   </FormControl>
       // </Box>
-          <select defaultValue="Large" className="select bg-white border border-gray-400 text-gray-600 font-helvetica text-[15px] text- w-full select-lg">
+      <select defaultValue="Large" value={value ?? ''} onChange={(e) => onChange?.(e.target.value)} className="select bg-white border border-gray-400 text-gray-600 font-helvetica text-[15px] text- w-full select-lg">
         <option disabled={false}>{label}</option>
         {optionArr?.map((option) => (
-          <option className='' key={option.keys} value={option.value}>
+          <option key={option.keys} value={option.value}>
             {option.label}
           </option>
         ))}

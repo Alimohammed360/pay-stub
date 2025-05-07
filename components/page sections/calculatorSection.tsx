@@ -115,7 +115,6 @@ export const CalculatorSection = () => {
 
   const Calculate = () => {
     const { hourly_rate, hours_worked, state, pay_frequency } = formValues;
-
     setDeductions(null);
 
     if (anualWage) {
