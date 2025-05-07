@@ -157,13 +157,13 @@ export const CalculatorSection = () => {
 
   return (
     <>
-      <div className='font-Calsans text-center my-5 mx-auto w-[430]'>
+      <div className='font-Calsans text-center my-5 mx-auto w-3/4'>
         <div className="text-3xl font-black">Pay Stub Calculator</div>
-        <div className="text-lg font-medium text-gray-500">
+        <div className="text-lg font-medium text-gray-500 ">
           Calculate your salary based on your hourly rate or annual wage
         </div>
       </div>
-      <div className="flex flex-wrap w-full max-h-auto ">
+      <div className="flex flex-wrap  w-full max-h-auto ">
         <div className="w-full sm:w-1/2 h-auto p-5 grid gap-8">
           <div className="flex justify-center gap-2 items-center">
             <button
@@ -179,7 +179,7 @@ export const CalculatorSection = () => {
               Hourly Wage
             </button>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col justify-center gap-6">
             {anualWage ? (
               <InputField
                 label="Enter your annual wage"
